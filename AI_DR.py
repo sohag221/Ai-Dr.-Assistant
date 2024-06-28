@@ -13,8 +13,6 @@ alexa = pyttsx3.init()
 voices = alexa.getProperty('voices')
 alexa.setProperty('voice', voices[0].id)
 
-# message=['time','tell me about','temperature is high','body temperature',
-#          'long term cough', 'swelling','feeling very thirsty','extreme bleeding']
 
 def talk(text):
     alexa.say(text)
@@ -37,12 +35,7 @@ def take_command2():
             command = command.lower()
             print(command)
             return command
-    # except sr.UnknownValueError:
-    #     talk("Sorry, I did not understand that.")
-    #     return None
-    # except sr.RequestError as e:
-    #     talk("Could not request results; {0}".format(e))
-    #     return None
+
     except Exception as e:
         print("Error: ", e)
         return None
